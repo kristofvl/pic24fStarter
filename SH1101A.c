@@ -17,6 +17,8 @@ uint8_t _color;
     else if(y < 40) page = 0xB4; else if(y < 48) page = 0xB5; \
     else if(y < 56) page = 0xB6; else page = 0xB7
 
+#define PMPWaitBusy()   while(PMMODEbits.BUSY)  // wait for PMP cycle end
+
 // a software delay in intervals of 10 microseconds.
 void Delay10us( uint32_t tenMicroSecondCounter ) {
     volatile int32_t cyclesRequiredForDelay;  //7 cycles burned to this point 
@@ -44,8 +46,6 @@ void DelayMs( uint16_t ms ) {
         }
     }
 }
-
-#define PMPWaitBusy()   while(PMMODEbits.BUSY)  // wait for PMP cycle end
 
 // write data into controller's RAM, chip select should be enabled
 extern inline void __attribute__ ((always_inline)) DeviceWrite(uint8_t data) {
@@ -97,14 +97,7 @@ extern inline void __attribute__ ((always_inline)) DriverInterfaceInit(void) {
     // PMP setup
     PMMODE = 0; PMAEN = 0; PMCON = 0;
     PMMODEbits.MODE = 2;                // Intel 80 master interface
-    #if (PMP_DATA_SETUP_TIME == 0)
-        PMMODEbits.WAITB = 0;
-    #else    
-        if (PMP_DATA_SETUP_TIME <= pClockPeriod)
-            PMMODEbits.WAITB = 0;
-        else if (PMP_DATA_SETUP_TIME > pClockPeriod)
-            PMMODEbits.WAITB = (PMP_DATA_SETUP_TIME / pClockPeriod) + 1;
-    #endif
+    PMMODEbits.WAITB = 0;
     #if (PMP_DATA_WAIT_TIME == 0)
         PMMODEbits.WAITM = 0;
     #else    
@@ -121,15 +114,11 @@ extern inline void __attribute__ ((always_inline)) DriverInterfaceInit(void) {
         else if (PMP_DATA_HOLD_TIME > pClockPeriod)
             PMMODEbits.WAITE = (PMP_DATA_HOLD_TIME / pClockPeriod) + 1;
     #endif
-    #if defined(USE_16BIT_PMP)
-    PMMODEbits.MODE16 = 1;              // 16 bit mode
-    #elif defined(USE_8BIT_PMP)
     PMMODEbits.MODE16 = 0;              // 8 bit mode
-    #endif
     PMCONbits.PTRDEN =  PMCONbits.PTWREN = 1;  // enable WR & RD line
     PMCONbits.PMPEN = 1;                // enable PMP
     DisplayResetDisable();              // release from reset
-    //Delay10us(20);  // hard delay for devices that need it after reset
+    Delay10us(20);  // hard delay for devices that need it after reset
 }
 
 void ResetDevice(void) {
