@@ -18,21 +18,26 @@ void delay(unsigned int milliseconds) {
 }
 
 int main(void) {
-    INIT_CLOCK(); CTMUInit();
-    uint16_t timeout=20;  // milliseconds
-    INIT_RGB();
-    SET_RGB(0,0,0);
+    INIT_CLOCK(); CTMUInit(); RGBMapColorPins();
+    uint16_t timeout=10;  // milliseconds
+    RGBTurnOnLED();
     ResetDevice();
     ClearDevice();
     SetColor( WHITE );
-    uint8_t x = 0, y = 17, xDelta = 1, yDelta = 1;
-    while(1) {  // cycle through LEDs (non-PWM))
+    uint8_t x = 2, y = 17, xDelta = 1, yDelta = 1;
+    int16_t aggr[3];
+    while(1) { 
         ReadCTMU();  // fills _potADC and buttons
         PutPixel(x,y);
-        if (x==127) xDelta = -1; if (x==0) xDelta = 1;
-        if (y==63) yDelta = -1; if (y==0) yDelta = 1;
+        if (x==127) xDelta = -1; if (x==2) xDelta = 1;
+        if (y==63) yDelta = -1; if (y==2) yDelta = 1;
         x+=xDelta; y+=yDelta;
         delay(timeout);
-        SET_RGB(buttons[0],buttons[1],buttons[2]);
+        for (uint8_t i=0; i<3; i++) {
+            if (buttons[i]) aggr[i]++; else aggr[i]--;
+            if (aggr[i] < 0) aggr[i]=0; if (aggr[i]>127) aggr[i]=127;
+        }
+        SetRGBs(aggr[0],aggr[1],aggr[2]);
     }
+    RGBTurnOffLED();
 }

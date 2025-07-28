@@ -7,6 +7,7 @@
       <itemPath>SH1101A.h</itemPath>
       <itemPath>PIC24FStarter.h</itemPath>
       <itemPath>TouchSense.h</itemPath>
+      <itemPath>RGBLeds.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -24,6 +25,7 @@
       <itemPath>SH1101A.c</itemPath>
       <itemPath>main.c</itemPath>
       <itemPath>TouchSense.c</itemPath>
+      <itemPath>RGBLeds.c</itemPath>
     </logicalFolder>
   </logicalFolder>
   <projectmakefile>Makefile</projectmakefile>

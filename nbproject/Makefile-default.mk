@@ -51,17 +51,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=SH1101A.c main.c TouchSense.c
+SOURCEFILES_QUOTED_IF_SPACED=SH1101A.c main.c TouchSense.c RGBLeds.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/SH1101A.o ${OBJECTDIR}/main.o ${OBJECTDIR}/TouchSense.o
-POSSIBLE_DEPFILES=${OBJECTDIR}/SH1101A.o.d ${OBJECTDIR}/main.o.d ${OBJECTDIR}/TouchSense.o.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/SH1101A.o ${OBJECTDIR}/main.o ${OBJECTDIR}/TouchSense.o ${OBJECTDIR}/RGBLeds.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/SH1101A.o.d ${OBJECTDIR}/main.o.d ${OBJECTDIR}/TouchSense.o.d ${OBJECTDIR}/RGBLeds.o.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/SH1101A.o ${OBJECTDIR}/main.o ${OBJECTDIR}/TouchSense.o
+OBJECTFILES=${OBJECTDIR}/SH1101A.o ${OBJECTDIR}/main.o ${OBJECTDIR}/TouchSense.o ${OBJECTDIR}/RGBLeds.o
 
 # Source Files
-SOURCEFILES=SH1101A.c main.c TouchSense.c
+SOURCEFILES=SH1101A.c main.c TouchSense.c RGBLeds.c
 
 
 
@@ -107,6 +107,12 @@ ${OBJECTDIR}/TouchSense.o: TouchSense.c  .generated_files/flags/default/9ec3bea5
 	@${RM} ${OBJECTDIR}/TouchSense.o 
 	${MP_CC} $(MP_EXTRA_CC_PRE)  TouchSense.c  -o ${OBJECTDIR}/TouchSense.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/TouchSense.o.d"      -g -D__DEBUG     -omf=elf -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
 	
+${OBJECTDIR}/RGBLeds.o: RGBLeds.c  .generated_files/flags/default/8485f27bd1c0a6c403e176020077c365d74a9ac6 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/RGBLeds.o.d 
+	@${RM} ${OBJECTDIR}/RGBLeds.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  RGBLeds.c  -o ${OBJECTDIR}/RGBLeds.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/RGBLeds.o.d"      -g -D__DEBUG     -omf=elf -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
+	
 else
 ${OBJECTDIR}/SH1101A.o: SH1101A.c  .generated_files/flags/default/f0ae9f58e18b12dfa49324dc7db98c4d182b7dcf .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
 	@${MKDIR} "${OBJECTDIR}" 
@@ -125,6 +131,12 @@ ${OBJECTDIR}/TouchSense.o: TouchSense.c  .generated_files/flags/default/59ea8645
 	@${RM} ${OBJECTDIR}/TouchSense.o.d 
 	@${RM} ${OBJECTDIR}/TouchSense.o 
 	${MP_CC} $(MP_EXTRA_CC_PRE)  TouchSense.c  -o ${OBJECTDIR}/TouchSense.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/TouchSense.o.d"        -g -omf=elf -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
+	
+${OBJECTDIR}/RGBLeds.o: RGBLeds.c  .generated_files/flags/default/da61b59ecd3430607e0ea02250d7006f6b4391bb .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/RGBLeds.o.d 
+	@${RM} ${OBJECTDIR}/RGBLeds.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  RGBLeds.c  -o ${OBJECTDIR}/RGBLeds.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/RGBLeds.o.d"        -g -omf=elf -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
 	
 endif
 

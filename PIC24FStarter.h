@@ -27,12 +27,8 @@
 
 #include "SH1101A.h"
 #include "TouchSense.h"
-
+#include "RGBLeds.h"
 
 #define INIT_CLOCK() OSCCON = 0x3302; CLKDIV = 0x0000;
-
-// RGB LEDs. Used pins are: RG6/RG7, RG8/RG9, RF4/RF5  --> tofo: PWM drive
-#define INIT_RGB() TRISFbits.TRISF5 = TRISGbits.TRISG9 = TRISGbits.TRISG7 = 0;
-#define SET_RGB(rS,gS,bS) LATFbits.LATF5=!rS;LATGbits.LATG9=!gS;LATGbits.LATG7=!bS; 
 
 #endif	/* P24FS_H */

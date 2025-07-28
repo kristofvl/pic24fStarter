@@ -1,4 +1,4 @@
-/* Author: kvl
+/* Author: kvl@eti.uni-siegen.de
  * Created on July 27, 2025, 7:24 PM
  * Read out the capacitive touch sense pads for the PIC24F Starter Kit
  * CTMU (Charge Time Measurement Unit) uses capacitive touch switches (pads
