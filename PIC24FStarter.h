@@ -4,6 +4,9 @@
 #ifndef P24FS_H
 #define	P24FS_H
 
+#include <xc.h>
+#include <p24Fxxxx.h>
+
 // Configuration bits -- from PIC24F data sheet and Starter Kit docs
 #pragma config WPFP = WPFP511    // Write Protection Flash Page 
 #pragma config WPDIS = WPDIS     // Segment Write Protection disabled

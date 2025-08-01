@@ -2,9 +2,6 @@
  * Created on July 27, 2025, 7:24 PM
  * 
  */
-
-#include "xc.h"
-#include <p24Fxxxx.h>
 #include "RGBLeds.h"
 
 // set new PWM output 

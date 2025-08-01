@@ -1,7 +1,6 @@
 /* Author: kvl@eti.uni-siegen.de
  * Created on July 26, 2025, 10:17 AM
  */
-
 #include "SH1101A.h"
 
 uint8_t _color;

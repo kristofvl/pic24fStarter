@@ -4,7 +4,7 @@ Tool Name:
   /Applications/microchip/xc16/v2.10/bin/bin/../bin/elf-ld
 
 Command:
-  -T/tmp/tmp00001e89.00 \
+  -T/tmp/tmp0000e461.00 \
   -p24FJ256GB106 \
   --mdfp=/Applications/microchip/mplabx/v6.25/packs/Microchip/PIC24F-GA-GB_DFP/1.10.375/xc16 \
   -o \
@@ -73,10 +73,10 @@ Default Scalar Model: Small
 section                    address   length (PC units)   length (bytes) (dec)
 -------                    -------   -----------------   --------------------
 .text                        0x200                0xee           0x165  (357)
-.text                        0x2ee               0xd12          0x139b  (5019)
-.dinit                      0x1000                0x14            0x1e  (30)
+.text                        0x2ee               0xcf6          0x1371  (4977)
+.dinit                       0xfe4                0x14            0x1e  (30)
 
-                 Total "program" memory used (bytes):         0x151e  (5406) 2%
+                 Total "program" memory used (bytes):         0x14f4  (5364) 2%
 
 
 "data" Memory  [Origin = 0x800, Length = 0x4000]
@@ -156,12 +156,12 @@ External Symbols in Program Memory (by address):
                   0x000ab6                  _ReadPotentiometer
                   0x000adc                  _CTMUInit
                   0x000b4a                  _ReadCTMU
-                  0x000d7c                  _SetRGBs
-                  0x000dce                  _RGBMapColorPins
-                  0x000e1a                  _RGBTurnOffLED
-                  0x000e34                  _RGBTurnOnLED
-                  0x000ec4                  _delay
-                  0x000efa                  _main
+                  0x000d7c                  _delay
+                  0x000db2                  _main
+                  0x000eb4                  _SetRGBs
+                  0x000f06                  _RGBMapColorPins
+                  0x000f76                  _RGBTurnOffLED
+                  0x000f94                  _RGBTurnOnLED
 
 External Symbols in Program Memory (by name):
 
@@ -175,13 +175,13 @@ External Symbols in Program Memory (by name):
                   0x0003ee                  _DriverInterfaceInit
                   0x00091c                  _GetPixel
                   0x000792                  _PutPixel
-                  0x000dce                  _RGBMapColorPins
-                  0x000e1a                  _RGBTurnOffLED
-                  0x000e34                  _RGBTurnOnLED
+                  0x000f06                  _RGBMapColorPins
+                  0x000f76                  _RGBTurnOffLED
+                  0x000f94                  _RGBTurnOnLED
                   0x000b4a                  _ReadCTMU
                   0x000ab6                  _ReadPotentiometer
                   0x0004be                  _ResetDevice
-                  0x000d7c                  _SetRGBs
+                  0x000eb4                  _SetRGBs
                   0x0003a8                  _SingleDeviceRead
                   0x0002c8                  __DefaultInterrupt
                   0x0002ce                  ___udivsi3
@@ -189,8 +189,8 @@ External Symbols in Program Memory (by name):
                   0x000252                  __data_init_standard
                   0x00023c                  __psv_init
                   0x000200                  __resetPRI
-                  0x000ec4                  _delay
-                  0x000efa                  _main
+                  0x000d7c                  _delay
+                  0x000db2                  _main
 
 Memory Configuration
 
@@ -278,13 +278,13 @@ __CONFIG1
 .comment
  *(.comment)
 
-.debug_info       0x000000       0x33e3
+.debug_info       0x000000       0x33bf
  *(.debug_info)
  .debug_info      0x000000       0x1427 build/default/debug/SH1101A.o
- .debug_info      0x001427        0x551 build/default/debug/main.o
- .debug_info      0x001978        0xc0f build/default/debug/TouchSense.o
- .debug_info      0x002587        0xdcf build/default/debug/RGBLeds.o
- .debug_info      0x003356         0x8d /Applications/microchip/xc16/v2.10/bin/bin/../../lib/libc99-pic30-elf.a(udivsi3.XX_o)
+ .debug_info      0x001427        0x560 build/default/debug/main.o
+ .debug_info      0x001987        0xc0f build/default/debug/TouchSense.o
+ .debug_info      0x002596        0xd9c build/default/debug/RGBLeds.o
+ .debug_info      0x003332         0x8d /Applications/microchip/xc16/v2.10/bin/bin/../../lib/libc99-pic30-elf.a(udivsi3.XX_o)
  *(.gnu.linkonce.wi.*)
 
 .debug_abbrev     0x000000        0x57b
@@ -295,13 +295,13 @@ __CONFIG1
  .debug_abbrev    0x00047e         0xe9 build/default/debug/RGBLeds.o
  .debug_abbrev    0x000567         0x14 /Applications/microchip/xc16/v2.10/bin/bin/../../lib/libc99-pic30-elf.a(udivsi3.XX_o)
 
-.debug_line       0x000000        0x695
+.debug_line       0x000000        0x68b
  *(.debug_line)
  .debug_line      0x000000        0x25a build/default/debug/SH1101A.o
- .debug_line      0x00025a        0x13f build/default/debug/main.o
- .debug_line      0x000399        0x187 build/default/debug/TouchSense.o
- .debug_line      0x000520        0x130 build/default/debug/RGBLeds.o
- .debug_line      0x000650         0x45 /Applications/microchip/xc16/v2.10/bin/bin/../../lib/libc99-pic30-elf.a(udivsi3.XX_o)
+ .debug_line      0x00025a        0x13e build/default/debug/main.o
+ .debug_line      0x000398        0x187 build/default/debug/TouchSense.o
+ .debug_line      0x00051f        0x127 build/default/debug/RGBLeds.o
+ .debug_line      0x000646         0x45 /Applications/microchip/xc16/v2.10/bin/bin/../../lib/libc99-pic30-elf.a(udivsi3.XX_o)
 
 .debug_frame      0x000000        0x258
  *(.debug_frame)
@@ -1450,32 +1450,32 @@ LOAD default_isr
 LOAD data_init
 
 .debug_pubtypes
-                  0x000080        0x343
+                  0x000080        0x34f
  .debug_pubtypes
                   0x000080        0x108 build/default/debug/SH1101A.o
  .debug_pubtypes
-                  0x000188         0x67 build/default/debug/main.o
+                  0x000188         0x73 build/default/debug/main.o
  .debug_pubtypes
-                  0x0001ef         0xcc build/default/debug/TouchSense.o
+                  0x0001fb         0xcc build/default/debug/TouchSense.o
  .debug_pubtypes
-                  0x0002bb        0x108 build/default/debug/RGBLeds.o
+                  0x0002c7        0x108 build/default/debug/RGBLeds.o
 
 __c30_signature
-                  0x0003c3         0x2a
+                  0x0003cf         0x2a
  __c30_signature
-                  0x0003c3          0x6 build/default/debug/SH1101A.o
+                  0x0003cf          0x6 build/default/debug/SH1101A.o
  __c30_signature
-                  0x0003c9          0x6 build/default/debug/main.o
+                  0x0003d5          0x6 build/default/debug/main.o
  __c30_signature
-                  0x0003cf          0x6 build/default/debug/TouchSense.o
+                  0x0003db          0x6 build/default/debug/TouchSense.o
  __c30_signature
-                  0x0003d5          0x6 build/default/debug/RGBLeds.o
+                  0x0003e1          0x6 build/default/debug/RGBLeds.o
  __c30_signature
-                  0x0003db          0x6 /Applications/microchip/xc16/v2.10/bin/bin/../../lib/libc99-pic30-elf.a(crt0_standard.o)
+                  0x0003e7          0x6 /Applications/microchip/xc16/v2.10/bin/bin/../../lib/libc99-pic30-elf.a(crt0_standard.o)
  __c30_signature
-                  0x0003e1          0x6 /Applications/microchip/xc16/v2.10/bin/bin/../../lib/libc99-pic30-elf.a(data_init_standard.o)
+                  0x0003ed          0x6 /Applications/microchip/xc16/v2.10/bin/bin/../../lib/libc99-pic30-elf.a(data_init_standard.o)
  __c30_signature
-                  0x0003e7          0x6 /Applications/microchip/xc16/v2.10/bin/bin/../../lib/libc99-pic30-elf.a(udivsi3.XX_o)
+                  0x0003f3          0x6 /Applications/microchip/xc16/v2.10/bin/bin/../../lib/libc99-pic30-elf.a(udivsi3.XX_o)
 
 .nbss               0x0850          0xe
  .nbss              0x0850          0xc build/default/debug/TouchSense.o
@@ -1507,7 +1507,7 @@ __c30_signature
 .config_WPEND     0x02abfa          0x2
  .config_WPEND    0x02abfa          0x2 build/default/debug/main.o
 
-.text             0x0002ee        0xd12
+.text             0x0002ee        0xcf6
  .text            0x0002ee        0x7c8 build/default/debug/SH1101A.o
                   0x0002ee                  _Delay10us
                   0x000336                  _DelayMs
@@ -1524,14 +1524,14 @@ __c30_signature
                   0x000ab6                  _ReadPotentiometer
                   0x000adc                  _CTMUInit
                   0x000b4a                  _ReadCTMU
- .text            0x000d7c        0x148 build/default/debug/RGBLeds.o
-                  0x000d7c                  _SetRGBs
-                  0x000dce                  _RGBMapColorPins
-                  0x000e1a                  _RGBTurnOffLED
-                  0x000e34                  _RGBTurnOnLED
- .text            0x000ec4        0x13c build/default/debug/main.o
-                  0x000ec4                  _delay
-                  0x000efa                  _main
+ .text            0x000d7c        0x138 build/default/debug/main.o
+                  0x000d7c                  _delay
+                  0x000db2                  _main
+ .text            0x000eb4        0x130 build/default/debug/RGBLeds.o
+                  0x000eb4                  _SetRGBs
+                  0x000f06                  _RGBMapColorPins
+                  0x000f76                  _RGBTurnOffLED
+                  0x000f94                  _RGBTurnOnLED
 
-.dinit            0x001000         0x14
- .dinit           0x001000         0x14 data_init
+.dinit            0x000fe4         0x14
+ .dinit           0x000fe4         0x14 data_init

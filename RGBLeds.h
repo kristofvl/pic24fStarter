@@ -3,9 +3,10 @@
  * Functions for the RGB LEDs, used pins are: RG6/RG7, RG8/RG9, RF4/RF5
  * To control the color, write the inverse of the saturation value to the PWM
  */
-
 #ifndef RGBLEDS_H
 #define	RGBLEDS__H
+
+#include <xc.h>
 
 #define CONVERT_TO_COLOR(x)         (~x & 0xFF)
 #define PWM_CONFIGURATION_1         0x0007

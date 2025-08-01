@@ -1,9 +1,10 @@
 /* Author: kvl@eti.uni-siegen.de
  * Created on July 26, 2025, 10:17 AM
  */
-
 #ifndef TOUCHSENSE_H
 #define	TOUCHSENSE__H
+
+#include <xc.h>
 
 #define TRIP_VALUE          0x500  // go to 1000 for more sensitive behaviors
 #define HYSTERESIS_VALUE    0x65

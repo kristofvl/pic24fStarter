@@ -1,18 +1,14 @@
 /* Author: kvl@eti.uni-siegen.de
  * Created on July 26, 2025, 10:17 AM
  * The SH1101A OLED Display is connected to the PIC24F through:
- *  - PMD7:PMD0    -> PMP Data port
- *  - PMRD (D5)    -> PMP Read
- *  - PMWR (D4)    -> PMP Write      
- *  - PMCS1 (D11)  -> Chip Select
- *  - PMA0 (B15)   -> A0
- *  - RESET (D2)   -> reset
+ *  - PMD7:PMD0    -> PMP Data port     - PMRD (D5)    -> PMP Read
+ *  - PMWR (D4)    -> PMP Write         - PMCS1 (D11)  -> Chip Select
+ *  - PMA0 (B15)   -> A0                - RESET (D2)   -> reset
  */
-
 #ifndef SH1101A_H
 #define	SH1101A__H
 
-#include <xc.h> // include processor files  
+#include <xc.h>
 
 #define CLOCK_FREQ 12000000
 

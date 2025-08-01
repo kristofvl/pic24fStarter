@@ -4,9 +4,6 @@
  * CTMU (Charge Time Measurement Unit) uses capacitive touch switches (pads
  * on the PCB), to measure the relative capacitance of switches by AD converter
  */
-
-#include "xc.h"
-#include <p24Fxxxx.h>
 #include "TouchSense.h"
 
 // CTMU Constants
