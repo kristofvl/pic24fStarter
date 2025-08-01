@@ -11,10 +11,10 @@ uint8_t _color;
     DeviceWrite(higherAddr); DisplaySetData();
 
 #define AssignPageAddress(y) \
-    if(y < 8) page = 0xB0; else if(y < 16) page = 0xB1; \
-    else if(y < 24) page = 0xB2; else if(y < 32) page = 0xB3; \
-    else if(y < 40) page = 0xB4; else if(y < 48) page = 0xB5; \
-    else if(y < 56) page = 0xB6; else page = 0xB7
+    if (y < 8) page = 0xB0; else if (y < 16) page = 0xB1; \
+    else if (y < 24) page = 0xB2; else if (y < 32) page = 0xB3; \
+    else if (y < 40) page = 0xB4; else if (y < 48) page = 0xB5; \
+    else if (y < 56) page = 0xB6; else page = 0xB7
 
 #define PMPWaitBusy()   while(PMMODEbits.BUSY)  // wait for PMP cycle end
 

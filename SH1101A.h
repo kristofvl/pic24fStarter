@@ -18,7 +18,7 @@
          
 // minimum pulse width requirement of CS controlled RD/WR access in SH1101A 
 // is 100 ns,  + 1 cycle in setup and 1 cycle hold (minimum):
-#define PMP_DATA_WAIT_TIME  45
+#define PMP_DATA_WAIT_TIME  102 // 
 #define PMP_DATA_HOLD_TIME  15  // based on SH1101A data hold requirement  
 // IOS FOR THE DISPLAY CONTROLLER
 #define DisplayResetConfig()    TRISDbits.TRISD2 = 0   // reset pin
