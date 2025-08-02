@@ -1,8 +1,7 @@
 /* Author: kvl@eti.uni-siegen.de
- * Created on July 26, 2025, 10:17 AM
- */
-#ifndef P24FS_H
-#define	P24FS_H
+ * Created on July 26, 2025, 10:17 AM */
+#ifndef P24FS__H
+#define	P24FS__H
 
 #include <xc.h>
 #include <p24Fxxxx.h>
@@ -34,4 +33,4 @@
 
 #define INIT_CLOCK() OSCCON = 0x3302; CLKDIV = 0x0000;
 
-#endif	/* P24FS_H */
+#endif	/* P24FS__H */

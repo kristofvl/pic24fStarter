@@ -1,9 +1,8 @@
 /* Author: kvl@eti.uni-siegen.de
  * Created on July 26, 2025, 10:17 AM
  * Functions for the RGB LEDs, used pins are: RG6/RG7, RG8/RG9, RF4/RF5
- * To control the color, write the inverse of the saturation value to the PWM
- */
-#ifndef RGBLEDS_H
+ * To control the color, write the inverse of the saturation value to the PWM */
+#ifndef RGBLEDS__H
 #define	RGBLEDS__H
 
 #include <xc.h>
@@ -24,4 +23,4 @@ void RGBTurnOffLED();
 // turns on the LEDs by turning on timers, PWMs, and setting pins to outputs
 void RGBTurnOnLED();
 
-#endif	/* RGBLEDS_H */
+#endif	/* RGBLEDS__H */

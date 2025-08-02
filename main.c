@@ -17,9 +17,17 @@ void delay(unsigned int milliseconds) {
     T1CONbits.TON = 0; // Turn off Timer1
 }
 
-void drawCircle(int x1, int y1, int r) {
-    int x = 0, y = r;
-    int p = 1 - r;
+// helper function for drawing a circle
+void plotPoints(uint8_t xctr, uint8_t yctr, uint8_t x, uint8_t y) {
+    PutPixel(xctr + x, yctr + y ); PutPixel(xctr - x, yctr + y );
+    PutPixel(xctr + x, yctr - y ); PutPixel(xctr - x, yctr - y );
+    PutPixel(xctr + y, yctr + x ); PutPixel(xctr - y, yctr + x );
+    PutPixel(xctr + y, yctr - x ); PutPixel(xctr - y, yctr - x );
+}
+// draw a circle at (x,y) with radius r
+void drawCircle(uint8_t x1, uint8_t y1, uint8_t r) {
+    uint8_t x = 0, y = r;
+    uint8_t p = 1 - r;
     plotPoints(x1, y1, x, y);
     while (x < y) {
         x++;
@@ -29,12 +37,6 @@ void drawCircle(int x1, int y1, int r) {
     }
 }
 
-void plotPoints(int xctr, int yctr, int x, int y) {
-    PutPixel(xctr + x, yctr + y ); PutPixel(xctr - x, yctr + y );
-    PutPixel(xctr + x, yctr - y ); PutPixel(xctr - x, yctr - y );
-    PutPixel(xctr + y, yctr + x ); PutPixel(xctr - y, yctr + x );
-    PutPixel(xctr + y, yctr - x ); PutPixel(xctr - y, yctr - x );
-}
 
 int main(void) {
     INIT_CLOCK(); CTMUInit(); RGBMapColorPins();

@@ -1,7 +1,6 @@
 /* Author: kvl@eti.uni-siegen.de
- * Created on July 26, 2025, 10:17 AM
- */
-#ifndef TOUCHSENSE_H
+ * Created on July 26, 2025, 10:17 AM */
+#ifndef TOUCHSENSE__H
 #define	TOUCHSENSE__H
 
 #include <xc.h>
